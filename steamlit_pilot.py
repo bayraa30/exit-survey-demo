@@ -255,9 +255,9 @@ elif st.session_state.page == 10:
 
         col1, col2, col3 = st.columns([1, 3, 1])
         with col1:
-            st.image("https://i.imgur.com/tmFDnpf.png", caption="Өсөж хөгжих боломж байгаагүй", use_column_width=True)
+            st.image("https://i.imgur.com/tmFDnpf.png", caption="Өсөж хөгжих боломж байгаагүй", use_container_width=True)
         with col3:
-            st.image("https://i.imgur.com/XcAr6kR.png", caption="Маш их боломжууд байдаг", use_column_width=True)
+            st.image("https://i.imgur.com/XcAr6kR.png", caption="Маш их боломжууд байдаг", use_container_width=True)
 
         with col2:
             final_rating = st.slider(
