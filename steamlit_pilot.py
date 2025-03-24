@@ -32,10 +32,10 @@ elif st.session_state.page == 1:
     col1, col2, col3 = st.columns([1, 3, 1])
 
     with col1:
-        st.image("https://i.imgur.com/5HDu5mQ.png", caption="Нийцээгүй", use_column_width=True)
+        st.image("https://i.imgur.com/5HDu5mQ.png", caption="Нийцээгүй", use_container_width=True)
 
     with col3:
-        st.image("https://i.imgur.com/Slnlc7w.png", caption="Төгс нийцсэн", use_column_width=True)
+        st.image("https://i.imgur.com/Slnlc7w.png", caption="Төгс нийцсэн", use_container_width=True)
 
     with col2:
         slider_value_q1 = st.slider(
@@ -60,10 +60,10 @@ elif st.session_state.page == 2:
     col1, col2, col3 = st.columns([1, 3, 1])
 
     with col1:
-        st.image("https://i.imgur.com/YjXuQ3Z.png", caption="Хүлээлтэд хүрээгүй", use_column_width=True)
+        st.image("https://i.imgur.com/YjXuQ3Z.png", caption="Хүлээлтэд хүрээгүй", use_container_width=True)
 
     with col3:
-        st.image("https://i.imgur.com/9FFoFJI.png", caption="Хүлээлтээс давсан", use_column_width=True)
+        st.image("https://i.imgur.com/9FFoFJI.png", caption="Хүлээлтээс давсан", use_container_width=True)
 
     with col2:
         # Only read the slider value — don't store in session state yet
@@ -92,19 +92,19 @@ elif st.session_state.page == 3:
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.image("https://i.imgur.com/HgAdV0l.png", use_column_width=True)  # Replace with actual image
+        st.image("https://i.imgur.com/HgAdV0l.png", use_container_width=True)  # Replace with actual image
         if st.button("🔴 Хангалтгүй"):
             st.session_state.answer3 = "Хангалтгүй"
             st.session_state.page += 1
 
     with col2:
-        st.image("https://i.imgur.com/ozPjQjD.png", use_column_width=True)  # Replace with actual image
+        st.image("https://i.imgur.com/ozPjQjD.png", use_container_width=True)  # Replace with actual image
         if st.button("🟡 Дунд зэрэг"):
             st.session_state.answer3 = "Дунд зэрэг"
             st.session_state.page += 1
 
     with col3:
-        st.image("https://i.imgur.com/dePXr8c.png", use_column_width=True)  # Replace with actual image
+        st.image("https://i.imgur.com/dePXr8c.png", use_container_width=True)  # Replace with actual image
         if st.button("🟢 Хангалттай"):
             st.session_state.answer3 = "Хангалттай"
             st.session_state.page += 1
@@ -117,10 +117,10 @@ elif st.session_state.page == 4:
     col1, col2, col3 = st.columns([1, 3, 1])
 
     with col1:
-        st.image("https://i.imgur.com/dFqvw4o.png", caption="Би өөрөө өөртөө buddy байсан", use_column_width=True)  # Replace with actual left image URL
+        st.image("https://i.imgur.com/dFqvw4o.png", caption="Би өөрөө өөртөө buddy байсан", use_container_width=True)  # Replace with actual left image URL
 
     with col3:
-        st.image("https://i.imgur.com/XaIyoRi.png", caption="Маш сайн дэмжиж ажилласан", use_column_width=True)  # Replace with actual right image URL
+        st.image("https://i.imgur.com/XaIyoRi.png", caption="Маш сайн дэмжиж ажилласан", use_container_width=True)  # Replace with actual right image URL
 
     with col2:
         slider_value_q2 = st.slider(
@@ -155,25 +155,25 @@ elif st.session_state.page == 6:
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
-        st.image("https://i.imgur.com/Fa0OMaa.png", use_column_width=True)
+        st.image("https://i.imgur.com/Fa0OMaa.png", use_container_width=True)
         if st.button("Уурлаж бухимдсан", key="btn_angry"):
             st.session_state.answer6 = "Уурлаж бухимдсан"
             st.session_state.page += 1
 
     with col2:
-        st.image("https://i.imgur.com/QzsvVzv.png", use_column_width=True)
+        st.image("https://i.imgur.com/QzsvVzv.png", use_container_width=True)
         if st.button("Ажил хэрэгч, дайчин", key="btn_direct"):
             st.session_state.answer6 = "Ажил хэрэгч, дайчин"
             st.session_state.page += 1
 
     with col3:
-        st.image("https://i.imgur.com/pE5obqG.png", use_column_width=True)
+        st.image("https://i.imgur.com/pE5obqG.png", use_container_width=True)
         if st.button("Урам зоригтой, найрсаг", key="btn_friendly"):
             st.session_state.answer6 = "Урам зоригтой, найрсаг"
             st.session_state.page += 1
 
     with col4:
-        st.image("https://i.imgur.com/MZ1H7Wt.png", use_column_width=True)
+        st.image("https://i.imgur.com/MZ1H7Wt.png", use_container_width=True)
         if st.button("Идэвхгүй, гутарсан", key="btn_passive"):
             st.session_state.answer6 = "Идэвхгүй, гутарсан"
             st.session_state.page += 1
@@ -186,10 +186,10 @@ elif st.session_state.page == 7:
     col1, col2, col3 = st.columns([1, 3, 1])
 
     with col1:
-        st.image("https://i.imgur.com/s01gjXu.png", caption="Эсрэгээрээ хэцүү байсан", use_column_width=True)  # Replace with actual left image URL
+        st.image("https://i.imgur.com/s01gjXu.png", caption="Эсрэгээрээ хэцүү байсан", use_container_width=True)  # Replace with actual left image URL
 
     with col3:
-        st.image("https://i.imgur.com/RaVIyD7.png", caption=" Маш их сэтгэл хангалуун байсан. ", use_column_width=True)  # Replace with actual right image URL
+        st.image("https://i.imgur.com/RaVIyD7.png", caption=" Маш их сэтгэл хангалуун байсан. ", use_container_width=True)  # Replace with actual right image URL
 
     with col2:
         slider_value_q2 = st.slider(
@@ -224,10 +224,10 @@ elif st.session_state.page == 9:
     col1, col2, col3 = st.columns([1, 3, 1])
 
     with col1:
-        st.image("https://i.imgur.com/nfT6Lsc.png", caption="Зарим талаараа л нийцдэггүй байсан", use_column_width=True)  # Replace with actual left image URL
+        st.image("https://i.imgur.com/nfT6Lsc.png", caption="Зарим талаараа л нийцдэггүй байсан", use_container_width=True)  # Replace with actual left image URL
 
     with col3:
-        st.image("https://i.imgur.com/lm76zZ9.png", caption="100% нийцэж байсан", use_column_width=True)  # Replace with actual right image URL
+        st.image("https://i.imgur.com/lm76zZ9.png", caption="100% нийцэж байсан", use_container_width=True)  # Replace with actual right image URL
 
     with col2:
         slider_value_q2 = st.slider(
@@ -252,10 +252,10 @@ elif st.session_state.page == 10:
     col1, col2, col3 = st.columns([1, 3, 1])
 
     with col1:
-        st.image("https://i.imgur.com/tmFDnpf.png", caption="Өсөж хөгжих боломж байгаагүй", use_column_width=True)
+        st.image("https://i.imgur.com/tmFDnpf.png", caption="Өсөж хөгжих боломж байгаагүй", use_container_width=True)
 
     with col3:
-        st.image("https://i.imgur.com/XcAr6kR.png", caption="Маш их боломжууд байдаг", use_column_width=True)
+        st.image("https://i.imgur.com/XcAr6kR.png", caption="Маш их боломжууд байдаг", use_container_width=True)
 
     with col2:
         final_rating = st.slider(
