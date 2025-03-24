@@ -245,29 +245,38 @@ elif st.session_state.page == 9:
 
 
 #Tenth question with slider and image, finishing remark
+if "submitted" not in st.session_state:
+    st.session_state.submitted = False
+
 elif st.session_state.page == 10:
-    st.header("Компанидаа ажил, мэргэжлийн хувьд өсөж, хөгжих боломжтой санагдсан уу?")
-    st.markdown("Слайдер ашиглан өөрийн үнэлгээг өгнө үү.")
+    if not st.session_state.submitted:
+        st.header("Компанидаа ажил, мэргэжлийн хувьд өсөж, хөгжих боломжтой санагдсан уу?")
+        st.markdown("Слайдер ашиглан өөрийн үнэлгээг өгнө үү.")
 
-    col1, col2, col3 = st.columns([1, 3, 1])
-    with col1:
-        st.image("https://i.imgur.com/tmFDnpf.png", caption="Өсөж хөгжих боломж байгаагүй", use_container_width=True)
-    with col3:
-        st.image("https://i.imgur.com/XcAr6kR.png", caption="Маш их боломжууд байдаг", use_container_width=True)
+        col1, col2, col3 = st.columns([1, 3, 1])
+        with col1:
+            st.image("https://i.imgur.com/tmFDnpf.png", caption="Өсөж хөгжих боломж байгаагүй", use_column_width=True)
+        with col3:
+            st.image("https://i.imgur.com/XcAr6kR.png", caption="Маш их боломжууд байдаг", use_column_width=True)
 
-    with col2:
-        final_rating = st.slider(
-            "Өөрийн үнэлгээг сонгоно уу:",
-            min_value=1,
-            max_value=5,
-            step=1,
-            value=1,
-            key="slider_q10"
-        )
-        st.write(f"Таны сонгосон үнэлгээ: {final_rating}")
+        with col2:
+            final_rating = st.slider(
+                "Өөрийн үнэлгээг сонгоно уу:",
+                min_value=1,
+                max_value=5,
+                step=1,
+                value=1,
+                key="slider_q10"
+            )
+            st.write(f"Таны сонгосон үнэлгээ: {final_rating}")
 
-    if st.button("Судалгааг дуусгах", key="btn_q10"):
-        st.session_state.final_rating = final_rating
+        if st.button("Судалгааг дуусгах", key="btn_q10"):
+            st.session_state.final_rating = final_rating
+            st.session_state.submitted = True
+            st.success("🎉 Баярлалаа! Таны хариултыг амжилттай хүлээн авлаа.")
+            st.balloons()
+
+    else:
         st.success("🎉 Баярлалаа! Таны хариултыг амжилттай хүлээн авлаа.")
         st.balloons()
 
