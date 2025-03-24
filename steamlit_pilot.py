@@ -222,26 +222,26 @@ elif st.session_state.page == 9:
     st.markdown("Слайдер ашиглан өөрийн үнэлгээг өгнө үү.")
 
     col1, col2, col3 = st.columns([1, 3, 1])
-
     with col1:
-        st.image("https://i.imgur.com/nfT6Lsc.png", caption="Зарим талаараа л нийцдэггүй байсан", use_container_width=True)  # Replace with actual left image URL
-
+        st.image("https://i.imgur.com/nfT6Lsc.png", caption="Зарим талаараа л нийцдэггүй байсан", use_container_width=True)
     with col3:
-        st.image("https://i.imgur.com/lm76zZ9.png", caption="100% нийцэж байсан", use_container_width=True)  # Replace with actual right image URL
+        st.image("https://i.imgur.com/lm76zZ9.png", caption="100% нийцэж байсан", use_container_width=True)
 
     with col2:
-        slider_value_q2 = st.slider(
+        slider_value_q9 = st.slider(
             "Өөрийн үнэлгээг сонгоно уу:",
             min_value=1,
             max_value=5,
             step=1,
-            format="%d"
+            value=1,
+            key="slider_q9"
         )
-        st.write(f"Таны сонгосон үнэлгээ: {slider_value_q2}")
+        st.write(f"Таны сонгосон үнэлгээ: {slider_value_q9}")
 
-        if st.button("Дараагийн асуулт руу шилжих"):
-            st.session_state.answer2 = slider_value_q2
-            st.session_state.page += 1
+    if st.button("Дараагийн асуулт руу шилжих", key="btn_q9"):
+        st.session_state.answer9 = slider_value_q9
+        st.session_state.page += 1
+
 
 
 #Tenth question with slider and image, finishing remark
@@ -250,10 +250,8 @@ elif st.session_state.page == 10:
     st.markdown("Слайдер ашиглан өөрийн үнэлгээг өгнө үү.")
 
     col1, col2, col3 = st.columns([1, 3, 1])
-
     with col1:
         st.image("https://i.imgur.com/tmFDnpf.png", caption="Өсөж хөгжих боломж байгаагүй", use_container_width=True)
-
     with col3:
         st.image("https://i.imgur.com/XcAr6kR.png", caption="Маш их боломжууд байдаг", use_container_width=True)
 
@@ -263,14 +261,15 @@ elif st.session_state.page == 10:
             min_value=1,
             max_value=5,
             step=1,
-            format="%d"
+            value=1,
+            key="slider_q10"
         )
         st.write(f"Таны сонгосон үнэлгээ: {final_rating}")
 
-        if st.button("Судалгааг дуусгах"):
-            st.session_state.final_rating = final_rating
-            st.success("🎉 Баярлалаа! Таны хариултыг амжилттай хүлээн авлаа.")
-            st.balloons()
+    if st.button("Судалгааг дуусгах", key="btn_q10"):
+        st.session_state.final_rating = final_rating
+        st.success("🎉 Баярлалаа! Таны хариултыг амжилттай хүлээн авлаа.")
+        st.balloons()
 
 
 
