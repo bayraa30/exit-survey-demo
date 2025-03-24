@@ -78,7 +78,7 @@ elif st.session_state.page == 2:
         st.write(f"Таны сонгосон үнэлгээ: {slider_value_q2}")
 
     # ✅ Only update session state when button is clicked
-    if st.button("Дараагийн асуулт руу шилжих"):
+    if st.button("Дараагийн асуулт руу шилжих", key="btn_q2"):
         st.session_state.answer2 = slider_value_q2
         st.session_state.page += 1
 
